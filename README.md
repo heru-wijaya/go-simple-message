@@ -1,6 +1,25 @@
 # go-simple-message
 
-this project will have 3 API
-1. GET All message
-2. POST new message
-3. GET All message in REAL TIME using websocket
+
+this project will have 2 part
+1. REST API with post and get message
+2. long live connection with websocket
+
+## REST API
+if want to test API, you can do
+
+`go run main.go` 
+
+then import warpin.postman_collection.json
+
+
+## Websocket
+if want to test websocket, you can do
+
+`go run server/main.go`
+
+open 2 or more terminal and do
+
+`go run client/main.go`
+
+try typing on terminal client, and you can see the messages on other client
