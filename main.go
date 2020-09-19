@@ -13,6 +13,7 @@ func main() {
 	model.ConnectDataBase()
 
 	r.GET("/message", controller.GetAllMessage)
+	r.POST("/message", controller.CreateMessage)
 
 	r.Run()
 }
