@@ -23,3 +23,4 @@ open 2 or more terminal and do
 `go run client/main.go`
 
 try typing on terminal client, and you can see the messages on other client
+every post message from client will be save to database. you can see on API GET all message to check
