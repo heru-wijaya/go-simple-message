@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"go-simple-message/controller"
+	"go-simple-message/model"
 	"math/rand"
 	"os"
 	"time"
@@ -25,6 +26,8 @@ func main() {
 		fmt.Println(err)
 	}
 	defer ws.Close()
+
+	model.ConnectDataBase()
 
 	// receive
 	var m controller.CreateMessageInput
@@ -54,6 +57,7 @@ func main() {
 			fmt.Println("Error sending message: ", err.Error())
 			break
 		}
+		controller.CreateMessageForChat(m)
 	}
 }
 

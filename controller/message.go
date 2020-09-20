@@ -33,3 +33,9 @@ func CreateMessage(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"data": message})
 }
+
+// CreateMessageForChat to create a new message on database for chat
+func CreateMessageForChat(input CreateMessageInput) {
+	message := model.Message{Body: input.Body}
+	model.DB.Create(&message)
+}
